@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandra Cisternas | Portafolio</title>
+    <title>Sandra Cisternas | Fintech & Fullstack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="nav-logo">Sandra.</div>
+        <div class="nav-logo">Sandra<span>.dev</span></div>
         <ul class="nav-links">
             <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#habilidades">Stack</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#experiencia">Trayectoria</a></li>
+            <li><a href="#contacto" class="nav-cta">Contacto</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <div class="hero-text">
-            <h1>¡Hola, soy Sandra!</h1>
+            <span class="hero-badge">💼 Finanzas + Tecnología</span>
+            <h1>¡Hola, soy Sandra Cisternas!</h1>
             <p class="typewriter-container">
-                <span id="typewriter-text"></span><span class="cursor">|</span>
+                <span class="prompt">&gt;</span> <span id="typewriter-text"></span><span class="cursor">|</span>
             </p>
-            <p class="subtitle">Ingeniera Comercial & Fullstack Developer fusionando negocios y tecnología 🌸</p>
-            <a href="#proyectos" class="btn">Descubre mis creaciones</a>
+            <p class="subtitle">Ingeniera Comercial & Fullstack Developer especializada en transformar procesos financieros y operativos en soluciones digitales escalables, seguras y automatizadas.</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos Fintech</a>
+                <a href="#contacto" class="btn btn-outline">Hablemos</a>
+            </div>
         </div>
         <div class="hero-img-container">
-            <img src="perfil github.jpg" alt="Sandra Pixel Art" class="hero-img">
+            <img src="perfil github.jpg" alt="Sandra Cisternas" class="hero-img">
         </div>
     </header>
 
     <section id="sobre-mi" class="about">
-        <h2>Sobre Mí</h2>
+        <h2>Propuesta de Valor</h2>
         <div class="divider"></div>
         <div class="cards-container">
             <div class="card">
-                <h3>💡 Visión Comercial</h3>
-                <p>Formada en Ingeniería Comercial en la ULS. Entiendo la rentabilidad, el control de stock y la gestión de procesos desde adentro, con experiencia real en el sector bancario y administrativo.</p>
+                <h3>📈 Visión Comercial y Bancaria</h3>
+                <p>Formada en Ingeniería Comercial en la ULS. Comprendo la rentabilidad, el control de gestión y la operativa bancaria desde adentro, con experiencia real en cuadraturas, normativas y atención financiera.</p>
             </div>
             <div class="card">
-                <h3>💻 Pasión Tech</h3>
-                <p>El análisis de datos me llevó al código. Me gradué como Desarrolladora Fullstack Python, creando soluciones limpias que automatizan procesos y resuelven problemas reales.</p>
+                <h3>💻 Arquitectura & Código</h3>
+                <p>El análisis de datos me llevó al desarrollo de software. Como Desarrolladora Fullstack, construyo aplicaciones modernas que automatizan flujos críticos, reducen errores operativos y mejoran la trazabilidad.</p>
             </div>
             <div class="card">
-                <h3>🚀 Enfoque Fintech</h3>
-                <p>Mi objetivo es unir mi background financiero (cuadraturas, normativas, análisis de ventas) con el desarrollo de software para crear productos tecnológicos eficientes.</p>
+                <h3>🏦 Enfoque Fintech</h3>
+                <p>Uno mi dominio financiero (conciliaciones, KPIs, control transaccional) con herramientas modernas de ingeniería de software para crear productos tecnológicos intuitivos, auditables y orientados al negocio.</p>
             </div>
         </div>
     </section>
 
-    <section class="skills">
-        <h2>Habilidades</h2>
+    <section id="habilidades" class="skills">
+        <h2>Stack Tecnológico & Financiero</h2>
         <div class="divider"></div>
-        <p class="skills-desc">Mi kit de herramientas para construir soluciones tecnológicas y analíticas.</p>
+        <p class="skills-desc">Herramientas con las que diseño, desarrollo y analizo soluciones de negocio.</p>
         <div class="tags-container">
             <span class="tag">Python</span>
-            <span class="tag">Django</span>
+            <span class="tag">TypeScript</span>
             <span class="tag">JavaScript</span>
-            <span class="tag">HTML / CSS</span>
+            <span class="tag">Django</span>
             <span class="tag">SQL / PostgreSQL</span>
-            <span class="tag">Finanzas / KPIs</span>
+            <span class="tag">Supabase / PLpgSQL</span>
+            <span class="tag">HTML5 / CSS3</span>
+            <span class="tag">Conciliación & KPIs</span>
             <span class="tag">Análisis de Datos</span>
             <span class="tag">Git / GitHub</span>
         </div>
@@ -71,72 +79,100 @@
         <h2>Proyectos Destacados</h2>
         <div class="divider"></div>
         <div class="cards-container">
-            <div class="card project-card">
-                <h3>📊 Tracker de Horas de Estudio</h3>
-                <p>Script en Python desarrollado para registrar y calcular tiempos, con exportación automatizada de datos a archivos CSV para análisis de rendimiento.</p>
+            
+            <!-- Proyecto Principal: BankMatch -->
+            <div class="card project-card featured-project">
+                <div class="project-badge">En Producción</div>
+                <h3>🏦 BankMatch — Conciliación Bancaria</h3>
+                <p>Plataforma web de conciliación bancaria que automatiza el cruce de transacciones, brindando control financiero auditable, detección de discrepancias y respaldo seguro en la nube mediante una interfaz ágil e intuitiva.</p>
                 <div class="tech-tags">
-                    <span>Python</span> <span>CSV</span>
+                    <span>TypeScript</span>
+                    <span>Supabase</span>
+                    <span>PLpgSQL</span>
+                    <span>CSS</span>
+                    <span>Lovable</span>
                 </div>
-                <a href="https://github.com/Sandriiwiis" target="_blank" class="btn-small">Ver en GitHub</a>
+                <div class="project-links">
+                    <a href="https://bankmatch.lovable.app/" target="_blank" class="btn-small btn-live">🚀 Demo en Vivo</a>
+                    <a href="https://github.com/Sandriiwiis/bankmatch" target="_blank" class="btn-small">💻 Código en GitHub</a>
+                </div>
             </div>
+
+            <!-- Proyecto 2 -->
             <div class="card project-card">
                 <h3>⚙️ API de Gestión Comercial</h3>
-                <p>Desarrollo backend para la administración de usuarios y transacciones, enfocando el diseño en reglas de negocio claras y seguridad.</p>
+                <p>Desarrollo backend para la administración de usuarios, inventarios y transacciones, enfocando la arquitectura en reglas de negocio claras, integridad referencial y seguridad de datos.</p>
                 <div class="tech-tags">
-                    <span>Django</span> <span>PostgreSQL</span>
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
                 </div>
-                <a href="https://github.com/Sandriiwiis" target="_blank" class="btn-small">Ver en GitHub</a>
+                <div class="project-links">
+                    <a href="https://github.com/Sandriiwiis" target="_blank" class="btn-small">💻 Ver en GitHub</a>
+                </div>
             </div>
+
+            <!-- Proyecto 3 -->
             <div class="card project-card">
-                <h3>💸 Dashboard Financiero (Próximamente)</h3>
-                <p>Interfaz de visualización de KPIs para monitoreo de ingresos y proyecciones basadas en datos transaccionales históricos.</p>
+                <h3>📊 Tracker & Analítica de Productividad</h3>
+                <p>Herramienta en Python desarrollada para registrar métricas de tiempo y rendimiento, con procesamiento automatizado y exportación estructurada a archivos CSV para reportería.</p>
                 <div class="tech-tags">
-                    <span>Python</span> <span>Pandas</span>
+                    <span>Python</span>
+                    <span>CSV</span>
+                    <span>Data Processing</span>
                 </div>
-                <a href="https://github.com/Sandriiwiis" target="_blank" class="btn-small">En desarrollo</a>
+                <div class="project-links">
+                    <a href="https://github.com/Sandriiwiis" target="_blank" class="btn-small">💻 Ver en GitHub</a>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <section class="experience">
+    <section id="experiencia" class="experience">
         <h2>Experiencia y Formación</h2>
-        <div class="divider-light"></div>
+        <div class="divider"></div>
         <div class="timeline">
             <div class="timeline-item">
+                <span class="timeline-date">Octubre 2025 – Marzo 2026</span>
                 <h4>Bootcamp Fullstack Python Developer</h4>
-                <p>Octubre 2025 – Febrero 2026 | Desarrollo de aplicaciones web, bases de datos y lógica algorítmica.</p>
+                <p>Desarrollo de aplicaciones web, diseño de bases de datos relacionales, APIs y lógica algorítmica.</p>
             </div>
             <div class="timeline-item">
-                <h4>Cajera Bancaria Transitoria</h4>
-                <p>Coopeuch | Abril 2025 – Actualidad | Manejo de altos volúmenes de efectivo, normativas y atención al socio.</p>
+                <span class="timeline-date">Abril 2025 – Actualidad</span>
+                <h4>Cajera Bancaria Transitoria — Coopeuch</h4>
+                <p>Manejo de altos volúmenes de efectivo, cuadraturas diarias, cumplimiento normativo y atención financiera a socios.</p>
             </div>
             <div class="timeline-item">
-                <h4>Analista de Liquidación de Ventas</h4>
-                <p>Coca-Cola Andina | Agosto 2024 – Diciembre 2024 | Control documental, inventario y supervisión logística.</p>
+                <span class="timeline-date">Agosto 2024 – Diciembre 2024</span>
+                <h4>Analista de Liquidación de Ventas — Coca-Cola Andina</h4>
+                <p>Conciliación y control documental de rutas, auditoría de inventario y supervisión de procesos logísticos.</p>
             </div>
             <div class="timeline-item">
-                <h4>Ingeniería Comercial</h4>
-                <p>Universidad de La Serena | 2019 – 2025 | Formación integral en administración, economía y finanzas.</p>
+                <span class="timeline-date">2019 – 2025</span>
+                <h4>Ingeniería Comercial — Universidad de La Serena</h4>
+                <p>Formación integral en administración estratégica, economía, finanzas corporativas y control de gestión.</p>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="contact">
-        <h2>¡Trabajemos juntos!</h2>
+        <h2>¡Construyamos el próximo producto financiero!</h2>
         <div class="divider"></div>
-        <p>¿Buscas un perfil que entienda el negocio y el código? Envíame un mensaje.</p>
+        <p class="contact-subtitle">¿Buscas un perfil híbrido que domine tanto las reglas del negocio financiero como el código? Hablemos.</p>
         <div class="contact-info">
             <p><strong>Email:</strong> scisternasch@gmail.com</p>
             <p><strong>Teléfono:</strong> +56 9 5116 3404</p>
             <p><strong>Ubicación:</strong> Ovalle, Chile</p>
         </div>
-        <a href="mailto:scisternasch@gmail.com" class="btn">Enviar un correo 💌</a>
+        <a href="mailto:scisternasch@gmail.com" class="btn btn-primary">Enviar un correo ✉️</a>
         
         <div class="social-links">
             <a href="https://www.linkedin.com/in/sandra-cisternas-chinga-566505119/" target="_blank">LinkedIn</a>
             <a href="https://github.com/Sandriiwiis" target="_blank">GitHub</a>
+            <a href="https://bankmatch.lovable.app/" target="_blank">BankMatch App</a>
         </div>
-        <p class="footer-note">Hecho con 🩷 y Python por Sandra | 2026</p>
+        <p class="footer-note">Diseñado y desarrollado por Sandra Cisternas | Fintech & Fullstack Portfolio 2026</p>
     </section>
 
     <script src="script.js"></script>
