@@ -1,20 +1,24 @@
 /* Paleta Fintech Moderna: Dark Slate, Emerald Green & Electric Blue */
 :root {
-    --bg-dark: #0b0f19;          /* Azul nocturno profundo */
-    --bg-section: #111827;       /* Gris/Azul pizarra para tarjetas */
-    --bg-elevated: #1e293b;      /* Fondo elevado para elementos interactivos */
-    --text-light: #f8fafc;       /* Blanco nítido */
-    --text-muted: #94a3b8;       /* Gris azulado para textos secundarios */
-    --primary: #10b981;          /* Verde Esmeralda (Finanzas / Rentabilidad) */
+    --bg-dark: #0b0f19;
+    --bg-section: #111827;
+    --bg-elevated: #1e293b;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #10b981;
     --primary-hover: #059669;
-    --accent: #3b82f6;           /* Azul Tecnológico */
+    --accent: #3b82f6;
     --border-color: rgba(255, 255, 255, 0.08);
     --glow: rgba(16, 185, 129, 0.18);
 }
 
-* {
-    box-sizing: border-box;
+html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
