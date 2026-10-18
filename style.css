@@ -498,3 +498,15 @@ section {
         width: 100%;
     }
 }
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+button.btn {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+}
