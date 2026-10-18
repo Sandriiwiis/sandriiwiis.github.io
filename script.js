@@ -10,13 +10,16 @@ let currentWord = "";
 let isDeleting = false;
 
 function type() {
+    const textElement = document.getElementById("typewriter-text");
+    if (!textElement) return;
+
     currentWord = words[i];
     
     if (isDeleting) {
-        document.getElementById("typewriter-text").textContent = currentWord.substring(0, j - 1);
+        textElement.textContent = currentWord.substring(0, j - 1);
         j--;
     } else {
-        document.getElementById("typewriter-text").textContent = currentWord.substring(0, j + 1);
+        textElement.textContent = currentWord.substring(0, j + 1);
         j++;
     }
 
@@ -25,33 +28,48 @@ function type() {
     if (isDeleting) { typeSpeed /= 2; }
 
     if (!isDeleting && j === currentWord.length) {
-        typeSpeed = 2000; // Pausa al final de la palabra
+        typeSpeed = 2000;
         isDeleting = true;
     } else if (isDeleting && j === 0) {
         isDeleting = false;
         i = (i + 1) % words.length;
-        typeSpeed = 400; // Pausa antes de la siguiente palabra
+        typeSpeed = 400;
     }
 
     setTimeout(type, typeSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    type();
-});
 function copyEmail() {
     const email = "scisternasch@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-        const btn = document.getElementById("copy-email-btn");
-        const originalText = btn.innerHTML;
+    const btn = document.getElementById("copy-email-btn");
+
+    // Método universal (funciona en local y en web)
+    const tempInput = document.createElement("textarea");
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    // API moderna de respaldo
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email);
+    }
+
+    // Cambio visual en el botón para confirmar
+    if (btn) {
         btn.innerHTML = "¡Correo copiado! ✅";
         btn.style.borderColor = "#10b981";
         btn.style.color = "#10b981";
         
         setTimeout(() => {
-            btn.innerHTML = originalText;
+            btn.innerHTML = "📋 Copiar correo";
             btn.style.borderColor = "";
             btn.style.color = "";
         }, 2500);
-    });
+    }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    type();
+});
