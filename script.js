@@ -39,3 +39,19 @@ function type() {
 document.addEventListener("DOMContentLoaded", function() {
     type();
 });
+function copyEmail() {
+    const email = "scisternasch@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById("copy-email-btn");
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "¡Correo copiado! ✅";
+        btn.style.borderColor = "#10b981";
+        btn.style.color = "#10b981";
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.borderColor = "";
+            btn.style.color = "";
+        }, 2500);
+    });
+}
