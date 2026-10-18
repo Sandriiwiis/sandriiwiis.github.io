@@ -1,4 +1,9 @@
-const words = ["Fintech Innovator.", "Data Analyst.", "Python Developer.", "Process Optimizer."];
+const words = [
+    "Fintech Developer.",
+    "Ingeniera Comercial.",
+    "Fullstack Python & TypeScript.",
+    "Automatización Financiera."
+];
 let i = 0;
 let j = 0;
 let currentWord = "";
@@ -15,7 +20,7 @@ function type() {
         j++;
     }
 
-    let typeSpeed = 100;
+    let typeSpeed = 90;
 
     if (isDeleting) { typeSpeed /= 2; }
 
@@ -25,7 +30,7 @@ function type() {
     } else if (isDeleting && j === 0) {
         isDeleting = false;
         i = (i + 1) % words.length;
-        typeSpeed = 500; // Pausa antes de la siguiente palabra
+        typeSpeed = 400; // Pausa antes de la siguiente palabra
     }
 
     setTimeout(type, typeSpeed);
