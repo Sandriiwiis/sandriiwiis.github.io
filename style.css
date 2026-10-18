@@ -1,78 +1,92 @@
-/* Paleta de colores inspirada en la referencia */
+/* Paleta Fintech Moderna: Dark Slate, Emerald Green & Electric Blue */
 :root {
-    --bg-dark: #2a2226; /* Fondo principal oscuro */
-    --bg-section: #352a2f; /* Fondo de tarjetas */
-    --bg-pink: #df9ba6; /* Rosado pastel para secciones destacadas */
-    --text-light: #f5e6e8;
-    --text-muted: #bda8ae;
-    --primary: #df9ba6;
-    --primary-hover: #c9828d;
+    --bg-dark: #0b0f19;          /* Azul nocturno profundo */
+    --bg-section: #111827;       /* Gris/Azul pizarra para tarjetas */
+    --bg-elevated: #1e293b;      /* Fondo elevado para elementos interactivos */
+    --text-light: #f8fafc;       /* Blanco nítido */
+    --text-muted: #94a3b8;       /* Gris azulado para textos secundarios */
+    --primary: #10b981;          /* Verde Esmeralda (Finanzas / Rentabilidad) */
+    --primary-hover: #059669;
+    --accent: #3b82f6;           /* Azul Tecnológico */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glow: rgba(16, 185, 129, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
 }
 
 .divider {
     width: 60px;
-    height: 2px;
-    background-color: var(--primary);
-    margin: 10px auto 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 12px auto 45px;
 }
 
-.divider-light {
-    width: 60px;
-    height: 2px;
-    background-color: var(--bg-dark);
-    margin: 10px auto 40px;
-}
-
-/* Barra de Navegación */
+/* Barra de Navegación con Glassmorphism */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10%;
-    background-color: rgba(42, 34, 38, 0.95); 
-    position: fixed; 
+    padding: 16px 10%;
+    background-color: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(12px);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
-    z-index: 1000; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid var(--primary); 
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    color: var(--text-light);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-logo span {
     color: var(--primary);
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 28px;
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--text-muted);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.25s ease;
     font-size: 0.95em;
 }
 
@@ -80,28 +94,66 @@ h1, h2, h3 {
     color: var(--primary);
 }
 
-/* Hero Section (Unificado con el margen para la barra) */
+.nav-links .nav-cta {
+    color: var(--primary);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 6px 16px;
+    border-radius: 8px;
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.nav-links .nav-cta:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+}
+
+/* Hero Section */
 .hero {
-    margin-top: 60px; /* Evita que la barra tape el contenido */
+    margin-top: 65px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    gap: 40px;
     padding: 100px 10%;
-    background: linear-gradient(135deg, #402931 0%, var(--bg-dark) 100%);
-    min-height: 70vh;
+    background: radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.08), transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 40%),
+                var(--bg-dark);
+    min-height: 78vh;
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+    color: var(--primary);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
 }
 
 .hero-text h1 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
+    font-size: 3.2em;
+    line-height: 1.15;
+    margin: 0 0 15px;
 }
 
 .typewriter-container {
-    font-size: 1.5em;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25em;
     color: var(--primary);
     font-weight: 500;
-    margin-bottom: 10px;
-    height: 35px; 
+    margin-bottom: 16px;
+    height: 32px;
+}
+
+.prompt {
+    color: var(--accent);
 }
 
 .cursor {
@@ -115,140 +167,330 @@ h1, h2, h3 {
 
 .subtitle {
     color: var(--text-muted);
-    margin-bottom: 30px;
-    max-width: 400px;
+    font-size: 1.05em;
+    margin-bottom: 32px;
+    max-width: 520px;
 }
 
-/* Imagen de la hero con efecto redondeado "cute" */
-.hero-img {
-    width: 320px; 
-    height: 320px; 
-    border-radius: 50px; 
-    box-shadow: 0 10px 30px rgba(223, 155, 166, 0.3);
-    border: 4px solid #df9ba680; 
-    object-fit: cover; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-img:hover {
-    transform: scale(1.03); 
-    box-shadow: 0 15px 40px rgba(223, 155, 166, 0.5); 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn {
-    background-color: var(--primary);
-    color: var(--bg-dark);
-    padding: 12px 30px;
+    padding: 12px 26px;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 10px;
     font-weight: 600;
-    transition: background 0.3s;
+    font-size: 0.95em;
+    transition: all 0.25s ease;
     display: inline-block;
 }
 
-.btn:hover { background-color: var(--primary-hover); }
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 4px 20px var(--glow);
+}
 
-/* Layout de Tarjetas Común */
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.hero-img {
+    width: 310px;
+    height: 310px;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--glow);
+    border: 2px solid rgba(16, 185, 129, 0.35);
+    object-fit: cover;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-img:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+/* Secciones y Tarjetas */
 section {
-    padding: 80px 10%;
+    padding: 90px 10%;
     text-align: center;
 }
 
 .cards-container {
     display: flex;
-    gap: 30px;
+    gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .card {
     background-color: var(--bg-section);
-    padding: 30px;
-    border-radius: 15px;
-    width: 280px;
-    border: 1px solid #4a3a41;
+    padding: 32px;
+    border-radius: 16px;
+    width: 330px;
+    border: 1px solid var(--border-color);
     text-align: left;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
-.card:hover { transform: translateY(-5px); }
-.card h3 { color: var(--primary); font-size: 1.3em; margin-top: 0; }
-.card p { color: var(--text-muted); font-size: 0.9em; }
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
 
-/* Skills */
-.skills { border-top: 1px solid #4a3a41; border-bottom: 1px solid #4a3a41; }
-.skills-desc { color: var(--text-muted); margin-bottom: 30px; }
+.card h3 {
+    color: var(--text-light);
+    font-size: 1.25em;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.92em;
+    margin-bottom: 20px;
+}
+
+/* Proyecto Destacado (BankMatch) */
+.featured-project {
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, var(--bg-section) 100%);
+}
+
+.project-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72em;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--primary);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Habilidades (Stack) */
+.skills {
+    background-color: rgba(17, 24, 39, 0.5);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skills-desc {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
 .tags-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
 }
+
 .tag {
+    font-family: 'JetBrains Mono', monospace;
     background-color: var(--bg-section);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--border-color);
     color: var(--text-light);
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9em;
-}
-
-/* Proyectos (usa estilos de .card) */
-.tech-tags { margin: 15px 0; }
-.tech-tags span {
-    font-size: 0.8em;
-    color: var(--primary);
-    background: rgba(223, 155, 166, 0.1);
-    padding: 4px 10px;
+    padding: 10px 20px;
     border-radius: 10px;
-    margin-right: 5px;
+    font-size: 0.88em;
+    transition: all 0.25s ease;
 }
-.btn-small { color: var(--primary); text-decoration: none; font-weight: 500; font-size: 0.9em; }
-.btn-small:hover { text-decoration: underline; }
 
-/* Experiencia (Pink Background) */
-.experience {
-    background-color: var(--bg-pink);
+.tag:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Etiquetas y Enlaces de Proyectos */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 22px;
+}
+
+.tech-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75em;
+    color: var(--primary);
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: auto;
+}
+
+.btn-small {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85em;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-elevated);
+    transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-live {
+    background: var(--primary);
+    color: var(--bg-dark);
+    border-color: var(--primary);
+}
+
+.btn-live:hover {
+    background: var(--primary-hover);
     color: var(--bg-dark);
 }
-.experience h2 { color: var(--bg-dark); }
+
+/* Experiencia y Formación (Timeline Fintech) */
+.experience {
+    background-color: var(--bg-section);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
 .timeline {
-    max-width: 600px;
+    max-width: 680px;
     margin: 0 auto;
     text-align: left;
 }
+
 .timeline-item {
-    border-left: 2px solid var(--bg-dark);
-    padding-left: 20px;
+    border-left: 2px solid rgba(16, 185, 129, 0.35);
+    padding-left: 26px;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 36px;
 }
+
 .timeline-item::before {
-    content: '🌸';
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary);
+    border: 3px solid var(--bg-section);
+    border-radius: 50%;
     position: absolute;
-    left: -12px;
-    top: 0;
-    font-size: 14px;
+    left: -8px;
+    top: 4px;
+    box-shadow: 0 0 10px var(--primary);
 }
-.timeline-item h4 { margin: 0 0 5px; font-family: 'Poppins', sans-serif; font-weight: 600; }
-.timeline-item p { margin: 0; font-size: 0.9em; opacity: 0.8; }
+
+.timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.timeline-item h4 {
+    margin: 0 0 6px;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.timeline-item p {
+    margin: 0;
+    font-size: 0.92em;
+    color: var(--text-muted);
+}
 
 /* Contacto */
-.contact-info { margin: 30px 0; color: var(--text-muted); }
-.social-links { margin: 30px 0; }
+.contact-subtitle {
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    margin: 30px 0;
+    color: var(--text-muted);
+}
+
+.social-links {
+    margin: 35px 0;
+}
+
 .social-links a {
-    color: var(--primary);
+    color: var(--text-light);
     text-decoration: none;
     margin: 0 15px;
     font-weight: 500;
+    transition: color 0.2s;
 }
-.footer-note { font-size: 0.8em; color: var(--text-muted); margin-top: 50px; }
 
-/* Responsive básico */
+.social-links a:hover {
+    color: var(--primary);
+}
+
+.footer-note {
+    font-size: 0.82em;
+    color: var(--text-muted);
+    margin-top: 50px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
-    .hero-text { margin-bottom: 40px; }
-    .hero-img { width: 200px; height: 200px; }
+    .navbar {
+        padding: 15px 6%;
+    }
+    .nav-links {
+        gap: 15px;
+        font-size: 0.85em;
+    }
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 70px 6%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-img {
+        width: 220px;
+        height: 220px;
+    }
+    .card {
+        width: 100%;
+    }
 }
